@@ -15,9 +15,9 @@ public class Main {
 
         try (var engine = new Engine(args[0])) {
             engine.run();
-            var analysis = engine.think(args[1], pvs);
+            engine.think(args[1], pvs);
             List<Line> lines;
-            while((lines = analysis.lines()) != null) {
+            while((lines = engine.lines()) != null) {
                 var sb = new StringBuilder();
                 for (var line : lines) {
                     sb.append(line);
